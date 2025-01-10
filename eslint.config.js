@@ -1,21 +1,44 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
+import reactPlugin from 'eslint-plugin-react';
+import prettierPlugin from 'eslint-plugin-prettier';
+import eslintRecommended from '@eslint/js';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import prettierConfig from 'eslint-config-prettier';
+import globals from 'globals';
 
-const reactConfig = {
-  ...pluginReact.configs.flat.recommended,
-  rules: {
-    ...pluginReact.configs.flat.recommended.rules,
-    'react/react-in-jsx-scope': 0
-  }
-}
-
-/** @type {import('eslint').Linter.Config[]} */
 export default [
-  {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  reactConfig,
+  eslintRecommended.configs.recommended,
+  {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      react: reactPlugin,
+      prettier: prettierPlugin,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+      ...reactPlugin.configs.recommended.rules,
+      ...prettierConfig.rules,
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          vars: 'all',
+          args: 'after-used',
+          ignoreRestSiblings: true,
+        },
+      ],
+      'react/react-in-jsx-scope': 0,
+      'prettier/prettier': 'warn',
+    },
+  },
 ];

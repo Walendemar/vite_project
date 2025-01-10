@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [
     react(),
     eslintPlugin({
-      fix: true
+      fix: true,
+      emitWarning: true
     })
   ],
 })
