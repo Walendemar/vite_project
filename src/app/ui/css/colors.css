@@ -1,0 +1,6 @@
+:root {
+    --blue: #1e90ff;
+    --white: #fff;
+    --link: var(--blue);
+    --link-hover: #65b3fe;
+}

@@ -1,0 +1,14 @@
+.link {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--link-hover);
+}
+
+.nav-menu{
+    .active {
+        text-decoration: underline;
+    }
+}

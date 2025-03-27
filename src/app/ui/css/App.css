@@ -1,0 +1,21 @@
+@import url('colors.css');
+
+.flex {
+  display: flex;
+}
+
+.flex.vertical {
+  flex-direction: column;
+}
+
+.flex.gap-sm {
+  gap: 12px;
+}
+
+.flex.gap-md {
+  gap: 24px;
+}
+
+.flex.gap-lg {
+    gap: 48px;
+}
