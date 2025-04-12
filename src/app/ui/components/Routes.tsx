@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router';
-import Settings from '../../../pages/settings/Settings.tsx';
-import Main from '../../../pages/main/Main.tsx';
+import Settings from '@pages/settings/Settings.tsx';
+import Main from '@pages/main/Main.tsx';
 
 const RoutesRoot = () => {
   return (

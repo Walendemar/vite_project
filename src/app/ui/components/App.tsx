@@ -1,6 +1,6 @@
-import '../css/App.css';
-import RoutesRoot from './Routes.tsx';
-import NavBar from '../../../widgets/navbar/NavBar.tsx';
+import '@app/ui/css/App.css';
+import RoutesRoot from '@app/ui/components/Routes';
+import NavBar from '@widgets/navbar/NavBar.tsx';
 
 const App = () => {
   return (
