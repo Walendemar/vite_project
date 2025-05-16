@@ -4,11 +4,11 @@ import '@widgets/navbar/NavBar.css';
 
 const NavBar = () => {
   return (
-    <div className="flex gap-sm nav-menu">
-      <NavLink className="link" to="/">
+    <div className="flex nav-menu">
+      <NavLink className="nav-link" to="/">
         Main
       </NavLink>
-      <NavLink className="link" to="/settings">
+      <NavLink className="nav-link" to="/settings">
         Settings
       </NavLink>
     </div>
