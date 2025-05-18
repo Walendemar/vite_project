@@ -1,4 +1,4 @@
-import '@app/ui/css/App.css';
+import '@app/ui/css/App.scss';
 import RoutesRoot from '@app/ui/components/Routes';
 import NavBar from '@widgets/navbar/NavBar.tsx';
 

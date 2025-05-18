@@ -2,22 +2,19 @@
     padding: 12px;
     color: var(--white);
     text-decoration: none;
+
+    &.active {
+        text-decoration: underline;
+        background-color: var(--steel-blue);
+    }
+
+    &:hover {
+        background-color: var(--active-steel-blue);
+    }
 }
 
-.nav-link.active {
-    background-color: var(--steel-blue);
-}
-
-.nav-link:hover {
-    background-color: var(--active-steel-blue);
-}
-
-.nav-menu{
+.nav-menu {
     padding: 0 12px;
     border-bottom: 1px solid var(--light-gray);
     background-color: var(--steel-blue);
-
-    .active {
-        text-decoration: underline;
-    }
 }
